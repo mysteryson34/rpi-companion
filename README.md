@@ -3,13 +3,13 @@
 Tested hardware:
 Raspberry Pi 3B/3B+ (w/ senseHAT - optional)
 
-Make a user account for Wordpress and define its home directory:
+Make a user account for Wordpress and define its home directory. This deviates from the LAMP server instructions that are found on the Raspberry Pi web site.
 
     sudo mkdir -p /local/wordpress
     sudo adduser --home /local/wordpress wordpress
     sudo chown wordpress:wordpress /local/wordpress
 	
-Install dependencies for Wordpress, delete the html folder, then create a symbolic link from the wordpress folder in its place:
+Install dependencies for Wordpress, delete the html folder, then create a symbolic link from the wordpress folder in its place. We are doing this so that we can run a bash shell from wordpress in a browser.
 
     sudo apt-get install apache2 php mysql-server php-mysql
     cd /var/www
