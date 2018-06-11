@@ -16,7 +16,7 @@ Install dependencies for Wordpress, delete the html folder, then create a symbol
     sudo rm -rf html
     sudo ln -s /local/wordpress /var/www/html
     
-Etc:
+Install worpress into its new home directory, then give ownership of everything *inside* the directory to *www-data*
 
     cd /local/wordpress
     sudo wget http://wordpress.org/latest.tar.gz
