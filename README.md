@@ -25,3 +25,18 @@ Install worpress into its new home directory, then give ownership of everything 
     sudo rm -rf wordpress latest.tar.gz
     sudo chown -R www-data: .
     
+Take care of users, groups, and permission.
+
+    sudo usermod -aG www-data wordpress
+    sudo usermod -aG wordpress www-data
+    sudo usermod -aG sudo www-data
+    sudo usermod -aG sudo wordpress
+    sudo visudo
+    
+Find the matching text in your visudo file and add what you don't already have.
+
+    # Allow members of group sudo to execute any command
+    %sudo     ALL=(ALL:ALL) ALL
+    www-data  ALL=(ALL) NOPASSWD: ALL
+    wordpress ALL=(ALL) NOPASSWD: ALL
+    
