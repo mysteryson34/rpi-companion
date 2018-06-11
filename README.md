@@ -40,3 +40,13 @@ Find the matching text in your visudo file and add what you don't already have.
     www-data  ALL=(ALL) NOPASSWD: ALL
     wordpress ALL=(ALL) NOPASSWD: ALL
     
+Complete your wordpress installation. If you are on a RPi, this step will enable you to set a root password if you haven't already.
+
+    sudo mysql_secure_installation
+    
+Then login to and set up mysql...
+
+    sudo mysql -uroot -p
+        > create database wordpress;
+	  GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'YOURPASSWORD';
+	  FLUSH PRIVILEGES;
